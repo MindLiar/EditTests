@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EditTest</title>
+  <style>
+    body {
+      position: relative;
+      position: fixed;
+      touch-action: manipulation;
+      zoom: 1 !important;
+      touch-action: pan-x pan-y;
+      overscroll-behavior: none;
+      user-zoom: fixed;
+      min-zoom: 1;
+      max-zoom: 1;
+    }
+
+    #app {
+      width: 100vw;
+      height: calc(100vh + 100px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: -30px 0 0 0;
+      overflow: hidden;
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/index-2KXzkklp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-nFo6G4Qe.css">
+  <script type="module">import.meta.url;import("_").catch(()=>1);async function* g(){};if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
+  <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="jsZip/dist/jszip.js"></script>
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=e00c44d2-0f62-48ab-9ca6-afb9f3b76b03');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) { // 请求完成且响应已准备好
+        if (xhr.status === 200) { // HTTP状态码为200（成功）
+          console.log(xhr.responseText); // 输出响应内容
+        } else {
+          console.error('Request failed.  Returned status of ' + xhr.status);
+        }
+      }
+    };
+
+    var data = {
+      "msgtype": "text",
+      "text": {
+        "content": "hello world"
+      }
+    };
+
+    xhr.send(JSON.stringify(data)); // 发送请求
+  </script>
+  <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+  <script nomodule crossorigin id="vite-legacy-polyfill" src="./assets/polyfills-legacy-kJsNpMg3.js"></script>
+  <script nomodule crossorigin id="vite-legacy-entry" data-src="./assets/index-legacy-FrBzE6qW.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+</body>
+
+</html>
